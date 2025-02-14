@@ -1,4 +1,6 @@
-﻿namespace OOP.Models
+﻿using System.Collections.Generic;
+
+namespace OOP.Models
 {
     public class Croupier
     {
@@ -9,11 +11,11 @@
 
         private Desk Desk { get; set; } = new Desk ();
 
-        public Player Player { get; set; }
+        private Player Player { get; set; }
 
         public void GiveCardsToPlayer(short cardCount)
         {
-            var cards = Desk.GetCardsFromDesc(cardCount);
+            List<Card> cards = Desk.GetCardsFromDesc(cardCount);
             Player.SetCardsToPlayer(cards);
         }
     }

@@ -6,7 +6,7 @@
         {
             int currentYear = 2025;
             bool isSended = true;
-            long kilometers = 234324634262265;
+            long kilometers = 234_324_634_262_265;
             double santimeres = 1.5;
             string universityName = "КНИТУ";
             int group = 1;

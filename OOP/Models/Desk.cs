@@ -12,7 +12,7 @@ namespace OOP.Models
             InitCards();
         }
 
-        public List<Card> Cards { get; set; }
+        private List<Card> Cards { get; set; }
 
         public void InitCards()
         {
@@ -35,7 +35,7 @@ namespace OOP.Models
 
             Cards = cards;
 
-            for (int i = 0; i < new Random().Next(2, 4); i++)
+            for (int i = 0; i < new Random().Next(20, 22); i++)
             {
                 ShuffleCards();
             }
