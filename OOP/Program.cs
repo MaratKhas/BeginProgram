@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OOP.Models;
+using System;
 
 namespace OOP
 {
@@ -10,6 +7,17 @@ namespace OOP
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите количество карт");
+            short.TryParse(Console.ReadLine(), out var countCards);
+
+            var player = new Player();
+
+            var croupier = new Croupier(player);
+
+            croupier.GiveCardsToPlayer(countCards);
+
+            Console.WriteLine(player.GetCardsInfo());
+            Console.ReadKey();
         }
     }
 }

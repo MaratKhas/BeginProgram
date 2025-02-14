@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D3E77EE-DB4B-4A66-B09F-9FA614B66C9B}</ProjectGuid>
+    <ProjectGuid>{8B81A14A-21ED-41A2-9701-D6D582A60C4B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OOP</RootNamespace>
-    <AssemblyName>OOP</AssemblyName>
+    <RootNamespace>_0._1_Variables</RootNamespace>
+    <AssemblyName>0.1_Variables</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Suit.cs" />
-    <Compile Include="Models\Card.cs" />
-    <Compile Include="Models\Desk.cs" />
-    <Compile Include="Models\Extensions.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Сroupier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
