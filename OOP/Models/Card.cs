@@ -11,6 +11,31 @@ namespace OOP.Models
 
         public Suit Suit { get; set; }
 
-        public string GetFullName() => string.Join(" - ", Name, Suit.ToString());
+        public string GetFullName() => string.Join(" - ", Name, GetSuitName(Suit));
+
+        public string GetSuitName(Suit suit)
+        {
+            switch (suit)
+            {
+                case Suit.Bubi:
+                    {
+                        return "Буби";
+                    }
+                case Suit.Сrosses:
+                    {
+                        return "Крести";
+                    }
+                case Suit.Peaks:
+                    {
+                        return "Пики";
+                    }
+                case Suit.Worms:
+                    {
+                        return "Червы";
+                    }
+                default: return "";
+            }
+        }
     }
+
 }
