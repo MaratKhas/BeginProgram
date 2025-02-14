@@ -1,9 +1,9 @@
 ﻿using OOP.Enums;
-
+using OOP.Interfaces;
 
 namespace OOP.Models
 {
-    public class Card
+    public class Card : ICard
     {
         public int Id { get; set; }
 
@@ -13,7 +13,7 @@ namespace OOP.Models
 
         public string GetFullName() => string.Join(" - ", Name, GetSuitName(Suit));
 
-        public string GetSuitName(Suit suit)
+        private string GetSuitName(Suit suit)
         {
             switch (suit)
             {

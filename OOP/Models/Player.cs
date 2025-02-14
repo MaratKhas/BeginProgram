@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using OOP.Interfaces;
+using System.Collections.Generic;
 using System.Text;
 
 namespace OOP.Models
 {
-    public class Player
+    public class Player  : IPlayer
     {
-        private List<Card> _cards;
+        private IEnumerable<ICard> _cards;
 
-        public void SetCardsToPlayer(List<Card> cards)
+        public void SetCardsToPlayer(ICollection<ICard> cards)
         {
             _cards = cards;
         }

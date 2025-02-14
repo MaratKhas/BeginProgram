@@ -1,4 +1,5 @@
-﻿using OOP.Models;
+﻿using OOP.Interfaces;
+using OOP.Models;
 using System;
 
 namespace OOP
@@ -10,9 +11,9 @@ namespace OOP
             Console.WriteLine("Введите количество карт");
             short.TryParse(Console.ReadLine(), out var countCards);
 
-            var player = new Player();
+            IPlayer player = new Player();
 
-            var croupier = new Croupier(player);
+            IСroupier croupier = new Croupier(player);
 
             croupier.GiveCardsToPlayer(countCards);
 

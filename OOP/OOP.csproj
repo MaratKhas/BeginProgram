@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Suit.cs" />
+    <Compile Include="Interfaces\ICard.cs" />
+    <Compile Include="Interfaces\IDesk.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\IСroupier.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Desk.cs" />
     <Compile Include="Models\Extensions.cs" />

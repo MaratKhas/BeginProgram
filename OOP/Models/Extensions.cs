@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using OOP.Interfaces;
+using System.Collections.Generic;
 
 namespace OOP.Models
 {
     public static class Extensions
     {
-        public static IEnumerable<Card> ShuffleCards(this IEnumerable<Card> left, IEnumerable<Card> right)
+        public static IEnumerable<ICard> ShuffleCards(this IEnumerable<ICard> left, IEnumerable<ICard> right)
         {
             var leftEnumerator = left.GetEnumerator();
             var rightEnumerator = right.GetEnumerator();

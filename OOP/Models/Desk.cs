@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using OOP.Enums;
+using OOP.Interfaces;
 
 namespace OOP.Models
 {
-    public class Desk
+    public class Desk : IDesk
     {
         public Desk()
         {
-            InitCards();
+            Cards = InitCards();
         }
 
-        private List<Card> Cards { get; set; }
+        public IReadOnlyList<ICard> Cards { get; set; }
 
-        public void InitCards()
+        private List<ICard> InitCards()
         {
-            var cards = new List<Card>(52);
+            var cards = new List<ICard>(52);
 
             foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
@@ -33,27 +34,25 @@ namespace OOP.Models
 
             cards.Add(new Card { Id = cards.Count + 1, Name = "Джокер", Suit = 0 });
 
-            Cards = cards;
-
-            for (int i = 0; i < new Random().Next(20, 22); i++)
+            for (int i = 0; i < new Random().Next(4,10); i++)
             {
-                ShuffleCards();
+                ShuffleCards(ref cards);
             }
-
+            return cards;
         }
 
-        private void ShuffleCards()
+        private void ShuffleCards(ref List<ICard> cards)
         {
-            var left = Cards.Take(Cards.Count / 2);
-            var right = Cards.Skip(Cards.Count / 2).Take(Cards.Count / 2);
-            var result = left.ShuffleCards(right).ToList();
-            
-            Cards = result;
-        }
+            var left = cards.Take(cards.Count() / 2);
+            var right = cards.Skip(cards.Count() / 2).Take(cards.Count() / 2);
+            var result = left.ShuffleCards(right);
 
-        public List<Card> GetCardsFromDesc(short count)
+            cards = result.ToList();
+
+        }
+        public ICollection<ICard> GetCardsFromDesc(short count)
         {
-            return Cards?.Take(count).ToList() ?? new List<Card>();
+            return Cards?.Take(count).ToList() ?? new List<ICard>();
         }
     }
 }

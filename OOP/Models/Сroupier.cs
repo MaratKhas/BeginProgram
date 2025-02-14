@@ -1,21 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using OOP.Interfaces;
+using System.Collections.Generic;
 
 namespace OOP.Models
 {
-    public class Croupier
+    public class Croupier : IСroupier
     {
-        public Croupier (Player player)
+        public Croupier (IPlayer player)
         {
             Player = player;
         }
 
-        private Desk Desk { get; set; } = new Desk ();
+        public IDesk Desk { get; private set; } = new Desk();
 
-        private Player Player { get; set; }
+        public IPlayer Player { get; private set; }
 
         public void GiveCardsToPlayer(short cardCount)
         {
-            List<Card> cards = Desk.GetCardsFromDesc(cardCount);
+            ICollection<ICard> cards = Desk.GetCardsFromDesc(cardCount);
             Player.SetCardsToPlayer(cards);
         }
     }
