@@ -10,7 +10,7 @@ namespace Coliseum.Models.WarriorsSelector
         {        
             Console.WriteLine("Пожалуйста выберите бойца из предложенного списка, нужно ввести порядковый номер бойца");
 
-            BaseWarrior result = null;
+            BaseWarrior result;
             var warriors = WarriorHolder.GetWarriors();
 
             var index = 0;

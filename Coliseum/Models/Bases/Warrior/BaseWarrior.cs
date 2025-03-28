@@ -14,6 +14,7 @@ namespace Coliseum.Models.Bases
         }
 
         #region Abstract Methods
+
         /// <summary>
         /// Имя бойца 
         /// </summary>
@@ -88,8 +89,8 @@ namespace Coliseum.Models.Bases
 
 
         /// <summary>
-        /// Атака оппонента
-        /// так же на этом шаге используется ультимативная способность если она есть у бойца
+        /// Атака на оппонента
+        /// так же на этом шаге используется атакующая ультимативная способность если она есть у бойца
         /// </summary>
         /// <param name="opponent"></param>
         public void Attack(IDamageable opponent)
@@ -99,7 +100,7 @@ namespace Coliseum.Models.Bases
                 Console.WriteLine($"Боец {NameWithNumber} совершает атаку");
                 opponent.GetDamage(Damage);
 
-                if (this is IHaveUltimate ultimate)
+                if (this is IHaveAttackUltimate<IUltimate> ultimate)
                 {
                     ultimate.UseUltimate();
                 }
@@ -108,6 +109,7 @@ namespace Coliseum.Models.Bases
 
         /// <summary>
         /// Принятие атаки 
+        /// так же в этой методе используется хилящая ультимативная способность если она есть
         /// </summary>
         /// <param name="damage"></param>
         /// <exception cref="Exception"></exception>
@@ -135,6 +137,11 @@ namespace Coliseum.Models.Bases
                     throw new Exception("Данный тип демеджа не существует в системе, пожалуйста ознакомьтесь с файлом DamageTypeHolder.cs");
             }
 
+            if (this is IHaveHealingUltimate<IUltimate> ultimate)
+            {
+                ultimate.UseUltimate();
+            }
+
             Console.WriteLine($"Текущие hp бойца {NameWithNumber} : {_health}");
         }
 
@@ -153,6 +160,6 @@ namespace Coliseum.Models.Bases
         public string GetWarriorInfo()
         {
             return $"{Name}, количество hp {MaxHealth} физ резист {PhysicalDefense} маг резист {MagicalDefense}";
-        }  
+        }
     }
 }

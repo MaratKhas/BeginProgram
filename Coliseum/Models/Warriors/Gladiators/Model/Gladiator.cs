@@ -5,13 +5,18 @@ using System;
 
 namespace Coliseum.Models.Warriors.Gladiator
 {
-    public class Gladiator : BaseWarrior, IHaveUltimate<GladiatorUltimate>
+    public class Gladiator : BaseWarrior, IHaveHealingUltimate<GladiatorUltimate>
     {
-        public Gladiator()
+        private Gladiator() 
         {
             Damage = new GladiatorDamage();
             Ultimate = new GladiatorUltimate();
             NameNumber = _cloneIterator;
+        }
+
+        public static Gladiator Create()
+        {
+            return new Gladiator();
         }
 
         #region BaseWarrior

@@ -13,7 +13,7 @@ namespace Coliseum.Models.Catalogs.Warriors
             return new List<BaseWarrior>() {
                 Slave,
                 Mercenaries,
-                Gladiator,
+                _gladiator,
             };
         }
 
@@ -21,8 +21,7 @@ namespace Coliseum.Models.Catalogs.Warriors
 
         private static readonly BaseWarrior Mercenaries = new Mercenary();
 
-        private static readonly BaseWarrior Gladiator = new Gladiator();
-
+        private static readonly BaseWarrior _gladiator =  Gladiator.Create();
 
     }
 }

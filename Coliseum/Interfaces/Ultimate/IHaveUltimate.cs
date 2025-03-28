@@ -10,4 +10,9 @@
     {
         T Ultimate { get; }
     }
+
+    public interface IHaveHealingUltimate<T> : IHaveUltimate<T> where T : IUltimate { }
+
+    public interface IHaveAttackUltimate<T> : IHaveUltimate<T> where T : IUltimate { }
+
 }
