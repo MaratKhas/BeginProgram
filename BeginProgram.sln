@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{9D3E77EE-DB4B-4A66-B09F-9FA614B66C9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0.1_Variables", "0.1_Variables\0.1_Variables.csproj", "{8B81A14A-21ED-41A2-9701-D6D582A60C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum", "Coliseum\Coliseum.csproj", "{D5F9A5AB-81D5-46B1-9D9E-7A7CD8F6FF2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8B81A14A-21ED-41A2-9701-D6D582A60C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B81A14A-21ED-41A2-9701-D6D582A60C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B81A14A-21ED-41A2-9701-D6D582A60C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F9A5AB-81D5-46B1-9D9E-7A7CD8F6FF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F9A5AB-81D5-46B1-9D9E-7A7CD8F6FF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F9A5AB-81D5-46B1-9D9E-7A7CD8F6FF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F9A5AB-81D5-46B1-9D9E-7A7CD8F6FF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
